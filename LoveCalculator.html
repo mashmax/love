@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+   <link rel="stylesheet" href="./love.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <script src="./love.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="./js/speedometer.js"></script>
+   <link href="./css/speedometer.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   <link rel="stylesheet" href="./style.css">
+   
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body background="images\love-backgrounds.jpg">
+    <div id="ops" style="display: block;">
+      <div class="container">
+
+        <h1 style="font-size: 76px;margin-left: 20%;"><i><b>Love Calculator</b></i></h1>
+            
+        <p id="para1">Wanna know how much your Crush loves❤️ you?</p> 
+        <p id="para2">Try this!</p>
+      </div>
+
+      <form id="myForm">
+        <div class="form-row col-md-6">
+          <div class="col">
+            <label for="input1">Your Name</label>
+            <input type="text" oninput="text1form(input2.value)" class="form-control" id="input1" placeholder="E.g. Landon" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"/>
+          </div>
+          <br>
+          <div class="col">
+            <label for="input2">Crush Name</label>
+            <input type="text" oninput="textform(input1.value)" class="form-control" id="input2" placeholder="E.g. Hope" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"/>
+          </div>
+          <br>
+          <button type="button" id="calbtn" style="display: none;" class="btn btn-primary" onclick="myFunction(input1.value,input2.value)">Calculate</button>
+          <button type="reset" class="btn btn-primary">Reset</button>
+          
+        </div>
+      </form>
+         
+    </div>
+    <br>
+    
+
+        
+        <div id="calc" style="display: none;">
+         
+          <button type="button" id="chacha" style="display: none;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header bg-primary">
+                  <h2 class="modal-title" id="exampleModalLabel"><b>Love Percentage</b></h2>
+                  <button type="button" onclick="maddy()" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="example1">
+                    <h3 id="speech" style="color: blue;font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: bold;display: block;"><b></b></h3>
+                    </div>
+            <!-- <marquee behaviour="scroll" width="100%" direction="left" height="25px" style="font-size: large;color: blue;font-family: Verdana, Geneva, Tahoma, sans-serif;" id="paranew"></marquee> -->
+            <!-- <input type="button" id="baby" style="display: none;"    onClick="document.getElementById('paranew').start();"/> -->
+            <!-- <input type="button" id="stopmar" style="display: none;" onClick="document.getElementById('paranew').stop();"/> -->
+            <!-- emoji style -->
+
+            <div class="emoji  emoji--like" id="like" style="display: none;">
+              <div class="emoji__hand">
+                  <div class="emoji__thumb"></div>
+              </div>
+            </div>
+            <div class="emoji  emoji--love" id="love" style="display:none;">
+              <div class="emoji__heart"></div>
+            </div>
+            <div class="emoji  emoji--haha" id="haha" style="display: none;">
+              <div class="emoji__face">
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth">
+                  <div class="emoji__tongue"></div>
+                </div>
+              </div>  
+            </div>
+            <div class="emoji  emoji--yay" id="yay" style="display: none;">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+            <div class="emoji  emoji--wow" id="wow" style="display: none;">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+            <div class="emoji  emoji--sad" id="sad" style="display: none;">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+            <div class="emoji  emoji--angry" id="angry" style="display: none;">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+
+                  <input id="myValue" type="hidden"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" onclick="uncle(myValue.value,input1.value,input2.value)" class="btn btn-primary">Try again</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <button id="showResult" style="display: none;"></button> -->
+        </div>
+       
+</body>
+</html>
